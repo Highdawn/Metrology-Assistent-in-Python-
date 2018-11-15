@@ -96,14 +96,14 @@ def calcRecom():
             a = a[:-1]
             print a
             chuva = int(a)
-            #print("Tamanho da precipitaçao " + str(a))
+            #print("Tamanho da precipitaÃ§ao " + str(a))
             
 
             #Pesquisar vento
             a = hi[x+12].getText()
             a = a[:2]
             a = round((int(a) * 1.60934),2)
-            #print("Força do vento          " + str(a))
+            #print("ForÃ§a do vento          " + str(a))
             vento = a
 
             #print("  ")
@@ -114,7 +114,7 @@ def calcRecom():
             if int(hora) == int(h_inicio):
                 file.write(str(hora) + " horas vai estar uma temperatura de " + str(temp) + "graus centigrados e uma chuva com uma grossura de " + str(chuva) + ", e um vento de intensidade " + str(vento) +" kilometros por hora\n")
 
-                #CONDIÇÕES DAS RECOMENDAÇÕES
+                #CONDIÃ‡Ã•ES DAS RECOMENDAÃ‡Ã•ES
                 if chuva > 10:
                     guardaChuva = 1
                 if temp < 20:
@@ -126,9 +126,9 @@ def calcRecom():
                     h_inicio = h_inicio-1
             x=x+16    
     print("  ")
-    print ('RECOMENDAÇÕES')
+    print ('RECOMENDAÃ‡Ã•ES')
     if casacotemp == 1:
-        text = "Recomenda-se o uso de casaco devido ás temperaturas baixas"
+        text = "Recomenda-se o uso de casaco devido Ã¡s temperaturas baixas"
         #tts = gTTS(text, lang='pt-PT')
         print (text)
         file.write(text)
@@ -161,7 +161,7 @@ def calcRecom():
     file.close()
 
 #-----------------------------------------------------------------MAIN-----------------------------------------------------------------------------
-op = input("A que dia deseja obter a sua previsão? Hoje(1)/Amanha(2) ")
+op = input("A que dia deseja obter a sua previsÃ£o? Hoje(1)/Amanha(2) ")
 if op == 1:
     opp = input("Deseja sabes durante o dia todo ou parte? Inteiro(1)/Parte(2) ")
     if opp == 1:    
@@ -169,12 +169,12 @@ if op == 1:
         h_fim = 23
     else: 
         h_inicio = input("A partir de que hora? ")
-        h_fim = input("Até que hora? ")
+        h_fim = input("AtÃ© que hora? ")
     
 #------------------------------------------------------Pesquisar Tempo para o dia de hoje----------------------------------------------------------
     date = DateTime.today().strftime("%Y-%m-%d")
     print 'Tempo para o dia de ' + str(date)
-    link = 'https://www.wunderground.com/hourly/pt/praia-de-cortegaca?cm_ven=localwx_hour'
+    link = 'https://www.wunderground.com/hourly/us/ca/san-francisco/37.78%2C-122.40?cm_ven=localwx_hour'
     print link
     #Scrap Info   
     res = requests.get(link)
@@ -201,7 +201,7 @@ else:
         h_fim = 23
     else: 
         h_inicio = input("A partir de que hora? ")
-        h_fim = input("Até que hora? ")
+        h_fim = input("AtÃ© que hora? ")
 
         
     #Pesquisar Tempo para amanha
@@ -211,7 +211,7 @@ else:
     
     print 'Tempo para o dia de ' + str(date)
     
-    link = 'https://www.wunderground.com/hourly/pt/praia-de-cortegaca/date/'+date+'?cm_ven=localwx_hour'
+    link = 'https://www.wunderground.com/hourly/pt/san-francisco/date/'+date+'?cm_ven=localwx_hour'
 
     #Scrap Info
     res = requests.get(link)
