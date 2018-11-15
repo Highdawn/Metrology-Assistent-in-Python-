@@ -1,6 +1,12 @@
 # Metrology Assistent in Python
 Python Scraping Project for Weather Advice 
 
+Context of the project:
+WIP
+
+
+
+
 Dependencies needed for program to work:
 - pip install requests
 - pip install bs4
