@@ -1,4 +1,3 @@
-# -*- coding: ISO-8859-1 -*-
 import requests
 import bs4
 import time
