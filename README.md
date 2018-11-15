@@ -1,5 +1,5 @@
-# MetrologyAssistent-Python-
-Python Scraping Project for Weather Advice in Python
+#Metrology Assistent in Python
+Python Scraping Project for Weather Advice 
 
 Dependencies needed for program to work:
 - pip install requests
