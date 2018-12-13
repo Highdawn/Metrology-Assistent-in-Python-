@@ -1,4 +1,4 @@
-# Metrology Assistent in Python
+# Metrology Assistent in Python 2.7
 Python Scraping Project for Weather Advice 
 
 Context of the project:
