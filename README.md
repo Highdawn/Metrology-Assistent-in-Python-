@@ -1,4 +1,4 @@
-# Metrology Assistent in Python 2.7
+# Metrology Assistent in Python 3.7
 Python Scraping Project for Weather Advice 
 
 Context of the project:
@@ -14,6 +14,6 @@ Dependencies needed for program to work:
 - pip install lxml
 
 Software/Librarys used:
-- Python 2.7.15
+- Python 3.7.1
 - Beautiful Soup 4
 - Google Text to Speech 
