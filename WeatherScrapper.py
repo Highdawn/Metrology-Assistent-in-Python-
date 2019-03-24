@@ -1,3 +1,4 @@
+# -*- coding: ISO-8859-1 -*-
 import requests
 import bs4
 import time
@@ -93,7 +94,7 @@ def calcRecom():
             #Pesquisar probabilidade de chuva
             a = hi[x+7].getText()
             a = a[:-1]
-            print a
+            #print (a)
             chuva = int(a)
             #print("Tamanho da precipitaçao " + str(a))
             
@@ -161,9 +162,9 @@ def calcRecom():
 
 #-----------------------------------------------------------------MAIN-----------------------------------------------------------------------------
 op = input("A que dia deseja obter a sua previsão? Hoje(1)/Amanha(2) ")
-if op == 1:
+if op == '1':
     opp = input("Deseja sabes durante o dia todo ou parte? Inteiro(1)/Parte(2) ")
-    if opp == 1:    
+    if opp == '1':   
         h_inicio = int(DateTime.today().strftime("%H"))+1
         h_fim = 23
     else: 
@@ -172,9 +173,9 @@ if op == 1:
     
 #------------------------------------------------------Pesquisar Tempo para o dia de hoje----------------------------------------------------------
     date = DateTime.today().strftime("%Y-%m-%d")
-    print 'Tempo para o dia de ' + str(date)
-    link = 'https://www.wunderground.com/hourly/us/ca/san-francisco/37.78%2C-122.40?cm_ven=localwx_hour'
-    print link
+    print ('Tempo para o dia de ' + str(date))
+    link = 'https://www.wunderground.com/hourly/us/ca/san-francisco?cm_ven=localwx_hour'
+    print (link)
     #Scrap Info   
     res = requests.get(link)
     type(res)
@@ -195,8 +196,8 @@ if op == 1:
 #-----------------------------------------------------------------Pesquisar Tempo para o dia de amanha-----------------------------------------------------------------------------  
 else:
     opp = input("Deseja sabes durante o dia todo ou parte? Inteiro(1)/Parte(2) ")
-    if opp == 1:
-        h_inicio = 01
+    if opp == '1':
+        h_inicio = 1
         h_fim = 23
     else: 
         h_inicio = input("A partir de que hora? ")
@@ -208,9 +209,9 @@ else:
     amanha = hoje + TimeDelta(days=1)
     date = amanha.strftime("%Y-%m-%d")
     
-    print 'Tempo para o dia de ' + str(date)
+    print ('Tempo para o dia de ' + str(date))
     
-    link = 'https://www.wunderground.com/hourly/pt/san-francisco/date/'+date+'?cm_ven=localwx_hour'
+    link = 'https://www.wunderground.com/hourly/pt/praia-de-cortegaca/date/'+date+'?cm_ven=localwx_hour'
 
     #Scrap Info
     res = requests.get(link)
